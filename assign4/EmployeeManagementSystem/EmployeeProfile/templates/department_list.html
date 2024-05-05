@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department List</title>
+</head>
+<body>
+    <h1>Department List</h1>
+    <ul>
+        {% for department in departments %}
+            <li>Name: {{ department.name }}</li>
+            {% if department.location %}
+                <ul>
+                    <li>Location: {{ department.location }}</li>
+                    <li>jobdescription: {{ department.jobdescription }}</li>
+                </ul>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+</head>
+<body>
+    <h1>Employee List</h1>
+    <ul>
+        {% for employee in employees %}
+            <li>
+                <h2>{{ employee.name }}</h2>
+                <p>Father's Name: {{ employee.father_name }}</p>
+                <p>CNIC: {{ employee.cnic }}</p>
+                {% if employee.department %}
+                    <p>Department: {{ employee.department.name }}</p> 
+                    <p>Location: {{ employee.department.location }}</p> 
+                    <p>Job Description: {{ employee.department.job_description }}</p>
+                {% else %}
+                    <p>No department assigned</p>
+                {% endif %}
+                <hr>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
